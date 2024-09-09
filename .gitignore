@@ -1,0 +1,19 @@
+# Environment variables
+env/
+
+# Data files
+data/
+
+# Python cache and virtual envs
+__pycache__/
+venv/
+
+# Airflow
+airflow*.*
+logs/
+standalone_admin_password.txt
+webserver_config.py
+
+# Project related
+assets/
+dashboard/
