@@ -8,6 +8,9 @@ data/
 __pycache__/
 venv/
 
+# Poetry
+poetry.lock
+
 # Airflow
 airflow*.*
 logs/

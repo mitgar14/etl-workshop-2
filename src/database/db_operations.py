@@ -6,7 +6,7 @@ import os
 import logging
 import warnings
 
-logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p")
 
 # Reading the environment variables
 load_dotenv("./env/.env")
@@ -34,6 +34,9 @@ def creating_engine():
 
 # Defining a function to infer the SQLAlchemy types from Pandas Dtypes
 def infering_types(dtype):
+    
+    logging.info(f"Inferring type for {dtype.name}")
+    
     if "int" in dtype.name:
         return Integer
     elif "float" in dtype.name:
@@ -50,38 +53,35 @@ def infering_types(dtype):
 # Creating table and loading the raw data
 def load_raw_data(engine, df, table_name):
     
-    logging.info(f"Creating table {table_name} from Pandas DataFrame {df}")
+    logging.info(f"Creating table {table_name} from Pandas DataFrame")
     
     try:   
-        df.to_sql(table_name, con=engine, if_exists='replace', index=False)
+        df.to_sql(table_name, con=engine, if_exists="replace", index=False)
     
-        logging.info(f'Table {table_name} created successfully.')
+        return logging.info(f"Table {table_name} created successfully.")
     
     except Exception as e:
-        logging.error(f'Error creating table {table_name}: {e}')
+        return logging.error(f"Error creating table {table_name}: {e}")
 
 # Creating table and loading the clean data
 def load_clean_data(engine, df, table_name):
     
-    logging.info(f"Creating table {table_name} from Pandas DataFrame {df}")
+    logging.info(f"Creating table {table_name} from Pandas DataFrame")
     
     try:
         if not inspect(engine).has_table(table_name):
             metadata = MetaData()
             columns = [Column(name,
-                            infering_types(dtype, name)) \
-                                for name, dtype in df.dtypes.items()]
+                            infering_types(dtype, name)) for name, dtype in df.dtypes.items()]
             
             table = Table(table_name, metadata, *columns)
             table.create(engine)
 
-            df.to_sql(table_name, con=engine, if_exists='append', index=False)
+            df.to_sql(table_name, con=engine, if_exists="append", index=False)
             
-            logging.info(f'Table {table_name} created successfully.')
+            logging.info(f"Table {table_name} created successfully.")
         else:
-            warnings.warn(f'Table {table_name} already exists.')
+            warnings.warn(f"Table {table_name} already exists.")
     
     except Exception as e:
-        logging.error(f'Error creating table {table_name}: {e}')
-
-
+        logging.error(f"Error creating table {table_name}: {e}")
