@@ -35,7 +35,7 @@ def creating_engine():
 # Defining a function to infer the SQLAlchemy types from Pandas Dtypes
 def infering_types(dtype):
     
-    logging.info(f"Inferring type for {dtype.name}")
+    logging.info(f"Inferring type for {dtype.name}.")
     
     if "int" in dtype.name:
         return Integer
@@ -53,7 +53,7 @@ def infering_types(dtype):
 # Creating table and loading the raw data
 def load_raw_data(engine, df, table_name):
     
-    logging.info(f"Creating table {table_name} from Pandas DataFrame")
+    logging.info(f"Creating table {table_name} from Pandas DataFrame.")
     
     try:   
         df.to_sql(table_name, con=engine, if_exists="replace", index=False)
@@ -61,12 +61,12 @@ def load_raw_data(engine, df, table_name):
         return logging.info(f"Table {table_name} created successfully.")
     
     except Exception as e:
-        return logging.error(f"Error creating table {table_name}: {e}")
+        return logging.error(f"Error creating table {table_name}: {e}.")
 
 # Creating table and loading the clean data
 def load_clean_data(engine, df, table_name):
     
-    logging.info(f"Creating table {table_name} from Pandas DataFrame")
+    logging.info(f"Creating table {table_name} from Pandas DataFrame.")
     
     try:
         if not inspect(engine).has_table(table_name):
@@ -84,4 +84,4 @@ def load_clean_data(engine, df, table_name):
             warnings.warn(f"Table {table_name} already exists.")
     
     except Exception as e:
-        logging.error(f"Error creating table {table_name}: {e}")
+        logging.error(f"Error creating table {table_name}: {e}.")
