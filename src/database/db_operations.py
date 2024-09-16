@@ -6,7 +6,7 @@ import os
 import logging
 import warnings
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
 
 # Reading the environment variables
 load_dotenv("./env/.env")
@@ -31,6 +31,10 @@ def creating_engine():
     logging.info("Engine created. You can now connect to the database.")
     
     return engine
+
+def disposing_engine(engine):
+    engine.dispose()
+    logging.info("Engine disposed.")
 
 # Defining a function to infer the SQLAlchemy types from Pandas Dtypes
 def infering_types(dtype):
@@ -58,10 +62,12 @@ def load_raw_data(engine, df, table_name):
     try:   
         df.to_sql(table_name, con=engine, if_exists="replace", index=False)
     
-        return logging.info(f"Table {table_name} created successfully.")
+        logging.info(f"Table {table_name} created successfully.")
     
     except Exception as e:
-        return logging.error(f"Error creating table {table_name}: {e}.")
+        logging.error(f"Error creating table {table_name}: {e}.")
+    finally:
+        disposing_engine(engine)
 
 # Creating table and loading the clean data
 def load_clean_data(engine, df, table_name):
@@ -82,6 +88,7 @@ def load_clean_data(engine, df, table_name):
             logging.info(f"Table {table_name} created successfully.")
         else:
             warnings.warn(f"Table {table_name} already exists.")
-    
     except Exception as e:
         logging.error(f"Error creating table {table_name}: {e}.")
+    finally:
+        disposing_engine(engine)
