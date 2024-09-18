@@ -3,6 +3,8 @@ from src.database.db_operations import creating_engine, disposing_engine
 import pandas as pd
 import logging
 
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
+
 def extracting_grammys_data():
     """
     Extracting data from the Spotify CSV file and return it as a DataFrame.   

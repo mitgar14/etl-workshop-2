@@ -25,7 +25,7 @@ def drop_columns(df, columns):
     
 ## ---- Merge datasets ---- ##
 
-def merge_datasets(spotify_df: pd.DataFrame, grammys_df: pd.DataFrame) -> pd.DataFrame:
+def merging_datasets(spotify_df: pd.DataFrame, grammys_df: pd.DataFrame) -> pd.DataFrame:
     """
     Merge the two datasets based on "track_name" and "nominee".
     
@@ -37,7 +37,6 @@ def merge_datasets(spotify_df: pd.DataFrame, grammys_df: pd.DataFrame) -> pd.Dat
     logging.info(f"Initial Grammys dataset has {grammys_df.shape[0]} rows and {grammys_df.shape[1]} columns.")
     
     try:
-
         # Clean "track_name" and "nominee" columns for better matching
         spotify_df["track_name_clean"] = spotify_df["track_name"].str.lower().str.strip()
         grammys_df["nominee_clean"] = grammys_df["nominee"].str.lower().str.strip()
@@ -65,6 +64,12 @@ def merge_datasets(spotify_df: pd.DataFrame, grammys_df: pd.DataFrame) -> pd.Dat
         ]
         
         drop_columns(df_merged, columns_drop)
+        
+        df_merged = (df_merged
+                     .reset_index()
+                     .rename(columns={'index': 'id'}))
+        
+        df_merged['id'] = df_merged['id'].astype(int)
 
         logging.info(f"Merge process completed. The final dataframe has {df_merged.shape[0]} rows and {df_merged.shape[1]} columns.")
         

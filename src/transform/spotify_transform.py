@@ -131,7 +131,7 @@ def transforming_spotify_data(df):
         subset_cols = [col for col in df.columns if col not in ["track_id", "album_name"]]
         df = df.drop_duplicates(subset=subset_cols, keep="first")
         
-        # Remove duplicate - Fifth step: different data case
+        # Remove duplicate - Fifth step: duplicated rows with some differences
         df = (df
                 .sort_values(by="popularity", ascending=False)
                 .groupby(["track_name", "artists"])
