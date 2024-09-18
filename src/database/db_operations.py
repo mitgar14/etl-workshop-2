@@ -44,7 +44,7 @@ def infering_types(dtype, column_name, df):
     elif "object" in dtype.name:
         max_len = df[column_name].astype(str).str.len().max()
         if max_len > 255:
-            logging.info(f"Adjusting column {column_name} to {max_len} characters.")
+            logging.info(f"Adjusting column {column_name} to Text due to length {max_len}.")
             return Text
         else:
             return String(255)
