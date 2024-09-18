@@ -43,7 +43,7 @@ The datasets used (*spotify_dataset* and *the_grammy_awards*)...
 Execute the following command to clone the repository:
 
 ```bash
-  git clone https://github.com/mitgar14/etl-workshop-1.git
+  git clone https://github.com/mitgar14/etl-workshop-2.git
 ```
 
 #### Demonstration of the process
@@ -62,16 +62,19 @@ To establish the connection to the database, we use a module called *connection.
 2. There we create a file called ***.env***.
 
 3. In that file we declare 6 enviromental variables. Remember that the variables in this case go without double quotes, i.e. the string notation (`"`):
-   ```python
-    PG_HOST = # host address, e.g. localhost or 127.0.0.1
-    PG_PORT = # PostgreSQL port, e.g. 5432
+  ```python
+  # PostgreSQL variables
+  PG_HOST = # host address, e.g. localhost or 127.0.0.1
+  PG_PORT = # PostgreSQL port, e.g. 5432
+  
+  PG_USER = # your PostgreSQL user
+  PG_PASSWORD = # your user password
+  
+  PG_DATABASE = # your database name, e.g. postgres
 
-    PG_USER = # your PostgreSQL user
-    PG_PASSWORD = # your user password
-    
-    PG_DRIVER = postgresql+psycopg2
-    PG_DATABASE = # your database name, e.g. postgres
-   ```
+  # Google Drive variables
+  DRIVE_CREDENTIALS = # your absolute path to the client_secrets.json file
+  ```
 
 #### Demonstration of the process
 
