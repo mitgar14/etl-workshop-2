@@ -142,6 +142,8 @@ def transforming_spotify_data(df):
         # Create column - duration_min
         df["duration_min"] = (df["duration_ms"]
                                 .apply(lambda x: f"{x // 60000}"))
+        
+        df["duration_min"] = df["duration_min"].astype(int)
 
         # Create column - duration_category
         df["duration_category"] = df["duration_ms"].apply(categorize_duration)
