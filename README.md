@@ -3,13 +3,20 @@
 Realized by **Martín García** ([@mitgar14](https://github.com/mitgar14)).
 
 ## Overview ✨
+> [!NOTE]
+> It's important to note that the raw Grammys dataset must be stored in a database in order to be read correctly.
 
-In this workshop we use randomly generated data on candidates stored in a CSV. With this data we run loading, cleaning and transformation processes to find interesting insights using the following tools:
+In this workshop we will use two datasets (spotify_dataset and the grammys_awards) that will be processed through Apache Airflow applying data cleaning, transformation and loading and storage including a merge of both datasets. The result will culminate in visualizations on a dashboard that will give us important conclusions about this dataset.
 
-* Python 3.12 ➜ [Download site](https://www.python.org/downloads/)
+The tools used are:
+
+* Python 3.10 ➜ [Download site](https://www.python.org/downloads/)
 * Jupyter Notebook ➜ [VS Code tool for using notebooks](https://youtu.be/ZYat1is07VI?si=BMHUgk7XrJQksTkt)
 * PostgreSQL ➜ [Download site](https://www.postgresql.org/download/)
 * Power BI (Desktop version) ➜ [Download site](https://www.microsoft.com/es-es/power-platform/products/power-bi/desktop)
+
+> [!WARNING]
+> Apache Airflow only runs correctly in Linux environments. If you have Windows, we recommend using a virtual machine or WSL.
 
 The dependencies needed for Python are
 
