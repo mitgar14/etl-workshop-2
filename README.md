@@ -6,7 +6,7 @@ Realized by **Martín García** ([@mitgar14](https://github.com/mitgar14)).
 > [!NOTE]
 > It's important to note that the raw Grammys dataset must be stored in a database in order to be read correctly.
 
-In this workshop we will use two datasets (spotify_dataset and the grammys_awards) that will be processed through Apache Airflow applying data cleaning, transformation and loading and storage including a merge of both datasets. The result will culminate in visualizations on a dashboard that will give us important conclusions about this dataset.
+In this workshop we will use two datasets (*spotify_dataset* and *the_grammys_awards*) that will be processed through Apache Airflow applying data cleaning, transformation and loading and storage including a merge of both datasets. The result will culminate in visualizations on a dashboard that will give us important conclusions about this dataset.
 
 The tools used are:
 
