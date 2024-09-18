@@ -28,7 +28,7 @@ The dependencies needed for Python are
 * SQLAlchemy
 * PyDrive2
 
-These dependencies are included in the requirements.txt file of the Python project. The step-by-step installation will be described later.
+These dependencies are included in the `requirements.txt` file of the Python project. The step-by-step installation will be described later.
 
 ## Dataset Information <img src="https://github.com/user-attachments/assets/5fa5298c-e359-4ef1-976d-b6132e8bda9a" alt="Dataset" width="30px"/>
 
