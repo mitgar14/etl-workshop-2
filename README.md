@@ -35,6 +35,10 @@ These dependencies are included in the `requirements.txt` file of the Python pro
 
 The datasets used (*spotify_dataset* and *the_grammy_awards*)...
 
+## Generate your Google Drive Auth file 🔑
+
+aaaa
+
 ## Run the project <img src="https://github.com/user-attachments/assets/99bffef1-2692-4cb8-ba13-d6c8c987c6dd" alt="Running code" width="30px"/>
 
 
