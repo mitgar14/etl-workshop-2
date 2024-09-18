@@ -156,7 +156,7 @@ def transforming_spotify_data(df):
         df["live_performance"] = df["liveness"] > 0.8
         
         # Dropping columns
-        df = df.drop(columns=["loudness", "mode", "duration_ms", "key", "tempo", "valence", "liveness", "time_signature"])
+        df = df.drop(columns=["loudness", "mode", "duration_ms", "key", "tempo", "valence", "speechiness", "acousticness", "instrumentalness", "liveness", "time_signature"])
 
         logging.info(f"The dataframe has been cleaned and transformed. You are left with {df.shape[0]} rows and {df.shape[1]} columns.")
         

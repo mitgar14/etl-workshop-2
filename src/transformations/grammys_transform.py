@@ -88,8 +88,10 @@ def transforming_grammys_data(df):
     try:
         logging.info(f"Starting transformation. The DataFrame has {df.shape[0]} rows and {df.shape[1]} columns.")
         
+        df = df.rename(columns={"winner": "is_nominated"})
+        
         # Dropping unnecessary columns
-        df = df.drop(columns=["published_at", "updated_at", "img", "winner"])
+        df = df.drop(columns=["published_at", "updated_at", "img"])
         
         # Dropping null values - Nominee case
         df = df.dropna(subset=["nominee"])
