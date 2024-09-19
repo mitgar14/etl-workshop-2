@@ -1,4 +1,4 @@
-from src.database.db_operations import creating_engine, load_clean_data, disposing_engine
+from database.db_operations import creating_engine, load_clean_data, disposing_engine
 
 import pandas as pd
 import logging

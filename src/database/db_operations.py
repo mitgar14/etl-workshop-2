@@ -10,7 +10,7 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
 
 # Reading the environment variables
-load_dotenv("./env/.env")
+load_dotenv("../env/.env")
 
 user = os.getenv("PG_USER")
 password = os.getenv("PG_PASSWORD")
