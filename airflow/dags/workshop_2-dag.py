@@ -39,12 +39,42 @@ def workshop2_dag():
     def spotify_extraction():
         return extract_spotify()
     
-    spotify_data = spotify_extraction()
+    spotify_raw_data = spotify_extraction()
         
     @task
     def grammys_extraction():
         return extract_grammys()
     
-    grammys_data = grammys_extraction()
+    grammys_raw_data = grammys_extraction()
+    
+    @task
+    def spotify_transformation(raw_df):
+        return transform_spotify(raw_df)
+    
+    spotify_data = spotify_transformation(grammys_raw_data)
+    
+    @task
+    def grammys_transformation(raw_df):
+        return transform_grammys(raw_df)
+    
+    grammys_data = grammys_transformation(grammys_raw_data)
+    
+    @task
+    def data_merging(spotify_df, grammys_df):
+        return merge_data(spotify_df, grammys_df)
+    
+    df = data_merging(spotify_data, grammys_data)
+    
+    @task
+    def data_loading(df):
+        return load_data(df)
+    
+    data_load = data_loading(df)
+    
+    @task
+    def data_storing(df):
+        return store_data(df)
+    
+    data_store = data_storing(df)
     
 workshop2_dag = workshop2_dag()
