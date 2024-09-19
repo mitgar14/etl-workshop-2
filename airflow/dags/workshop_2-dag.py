@@ -51,7 +51,7 @@ def workshop2_dag():
     def spotify_transformation(raw_df):
         return transform_spotify(raw_df)
     
-    spotify_data = spotify_transformation(grammys_raw_data)
+    spotify_data = spotify_transformation(spotify_raw_data)
     
     @task
     def grammys_transformation(raw_df):
@@ -75,6 +75,6 @@ def workshop2_dag():
     def data_storing(df):
         return store_data(df)
     
-    data_store = data_storing(df)
+    data_store = data_storing(data_load)
     
 workshop2_dag = workshop2_dag()

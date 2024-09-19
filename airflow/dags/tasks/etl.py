@@ -76,7 +76,9 @@ def load_data(df):
         json_df = json.loads(df)
         
         df = pd.DataFrame(json_df)
-        loading_clean_data(df)
+        loading_clean_data(df, "merged_data")
+        
+        return df.to_json(orient="records")
     except Exception as e:
         logging.error(f"Error loading data: {e}")
         
@@ -85,6 +87,6 @@ def store_data(df):
         json_df = json.loads(df)
         
         df = pd.DataFrame(json_df)
-        store_merged_data(df)
+        store_merged_data("merged_data", df, "1x3tS43kSxC2oKhq7xCiJFzXqGerGvcy7")
     except Exception as e:
         logging.error(f"Error storing data: {e}")
