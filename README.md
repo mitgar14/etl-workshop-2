@@ -67,17 +67,33 @@ To establish the connection to the database, we use a module called *connection.
 
 3. In that file we declare 6 enviromental variables. Remember that the variables in this case go without double quotes, i.e. the string notation (`"`):
   ```python
-  # PostgreSQL variables
-  PG_HOST = # host address, e.g. localhost or 127.0.0.1
-  PG_PORT = # PostgreSQL port, e.g. 5432
+  # PostgreSQL Variables
   
-  PG_USER = # your PostgreSQL user
-  PG_PASSWORD = # your user password
+  # PG_HOST: Specifies the hostname or IP address of the PostgreSQL server.
+  PG_HOST = # db-server.example.com
   
-  PG_DATABASE = # your database name, e.g. postgres
-
-  # Google Drive variables
-  DRIVE_CREDENTIALS = # your absolute path to the client_secrets.json file
+  # PG_PORT: Defines the port used to connect to the PostgreSQL database.
+  PG_PORT = # 5432 (default PostgreSQL port)
+  
+  # PG_USER: The username for authenticating with the PostgreSQL database.
+  PG_USER = # your-postgresql-username
+  
+  # PG_PASSWORD: The password for authenticating with the PostgreSQL database.
+  PG_PASSWORD = # your-postgresql-password
+  
+  # PG_DATABASE: The name of the PostgreSQL database to connect to.
+  PG_DATABASE = # your-database-name
+  
+  # Google Drive Variables
+  
+  # CLIENT_SECRETS_PATH: Path to the client secrets file used for Google Drive authentication.
+  CLIENT_SECRETS_PATH = "/path/to/your/credentials/client_secrets.json"
+  
+  # SETTINGS_PATH: Path to the settings file for the application configuration.
+  SETTINGS_PATH = "/path/to/your/env/settings.yaml"
+  
+  # SAVED_CREDENTIALS_PATH: Path to the file where Google Drive saved credentials are stored.
+  SAVED_CREDENTIALS_PATH = "/path/to/your/credentials/saved_credentials.json"
   ```
 
 #### Demonstration of the process
@@ -112,32 +128,6 @@ We execute the 3 notebooks following the next order. You can run it just pressin
 ![image](https://github.com/user-attachments/assets/7599de5a-3330-4d1d-ac08-ced17639c320)
   
 Remember to choose **the right Python kernel** at the time of running the notebook and **install the *ipykernel*** to support Jupyter notebooks in VS Code.
-
-### Connecting the database with Power BI
-
-1. Open Power BI Desktop and create a new dashboard. Select the *Get data* option - be sure you choose the "PostgreSQL Database" option.
-
-![Power BI](https://github.com/user-attachments/assets/a53ef992-d5b9-468e-b227-94e72179a591)
-
-
-2. Insert the PostgreSQL Server and Database Name.
-
-![image](https://github.com/user-attachments/assets/ebe02754-44e8-498c-891f-e1a0038d351d)
-
-
-3. Fill in the following fields with your credentials.
-
-![image](https://github.com/user-attachments/assets/18748b7f-7d5c-4c21-891a-70e77dd21d69)
-
-
-4. If you manage to connect to the database the following tables will appear:
-
-![image](https://github.com/user-attachments/assets/2b4aa913-5fa3-4dc3-8704-1d56a4354a89)
-
-
-5. Choose the candidates_hired table and start making your own visualizations!
-
-![image](https://github.com/user-attachments/assets/4cdff11e-215f-4387-8a2f-ab383dbe436d)
 
 
 ## Thank you! 💕🐍
