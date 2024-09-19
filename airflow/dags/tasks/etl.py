@@ -9,7 +9,7 @@ from transform.grammys_transform import transforming_grammys_data
 from transform.merge import merging_datasets
 
 from load_and_store.load import loading_merged_data
-from load_and_store.store import store_merged_data
+from load_and_store.store import storing_merged_data
 
 import json
 import pandas as pd
@@ -87,6 +87,6 @@ def store_data(df):
         json_df = json.loads(df)
         
         df = pd.DataFrame(json_df)
-        store_merged_data("merged_data", df, "1x3tS43kSxC2oKhq7xCiJFzXqGerGvcy7")
+        storing_merged_data("merged_data", df, "1x3tS43kSxC2oKhq7xCiJFzXqGerGvcy7")
     except Exception as e:
         logging.error(f"Error storing data: {e}")

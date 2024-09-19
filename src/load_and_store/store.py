@@ -48,7 +48,7 @@ def auth_drive():
         logging.error(f"Authentication error: {e}", exc_info=True)
 
 # Function to upload a merged DataFrame to Google Drive as a CSV file.
-def store_merged_data(title, df, folder_id): 
+def storing_merged_data(title, df, folder_id): 
     drive = auth_drive()
     
     logging.info(f"Storing {title} on Google Drive.")
