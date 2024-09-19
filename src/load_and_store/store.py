@@ -4,31 +4,46 @@ from pydrive2.drive import GoogleDrive
 from dotenv import load_dotenv
 import os
 
-
 import pandas as pd
 
 import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
 
+# Cargar las variables de entorno desde .env
 load_dotenv("./env/.env")
 
-credentials_file = rf"{os.getenv('DRIVE_CREDENTIALS')}"
+client_secrets_file = rf"{os.getenv('CLIENT_SECRETS_PATH')}"
+settings_file = rf"{os.getenv('SETTINGS_PATH')}"
+credentials_file = rf"{os.getenv('CREDENTIALS_FILE_PATH')}"
 
 # Function to authenticate Google Drive using PyDrive2.
 def auth_drive():
     try:
         logging.info("Starting Google Drive authentication process.")
+
+        gauth = GoogleAuth(settings_file=settings_file)
         
-        gauth = GoogleAuth()
-        gauth.LoadClientConfigFile(credentials_file)
-        
-        gauth.LocalWebserverAuth()
-        logging.info("Local webserver authentication completed successfully.")
-                
+        if os.path.exists(credentials_file):
+            gauth.LoadCredentialsFile(credentials_file)
+            if gauth.access_token_expired:
+                logging.info("Access token expired, refreshing token.")
+                gauth.Refresh()
+            else:
+                logging.info("Using saved credentials.")
+        else:
+            logging.info("Saved credentials not found, performing web authentication.")
+            
+            gauth.LoadClientConfigFile(client_secrets_file)
+            gauth.LocalWebserverAuth()
+            gauth.SaveCredentialsFile(credentials_file)
+            
+            logging.info("Local webserver authentication completed and credentials saved successfully.")
+
         drive = GoogleDrive(gauth)
         logging.info("Google Drive authentication completed successfully.")
-        
+
         return drive
+
     except Exception as e:
         logging.error(f"Authentication error: {e}", exc_info=True)
 
@@ -40,11 +55,11 @@ def store_merged_data(title, df, folder_id):
     
     csv_file = df.to_csv(index=False) 
     
-    # Create a new file on Google Drive with the specified title and folder.
-    file = drive.CreateFile({"title": title,
-                             "parents": [{"kind": "drive#fileLink",
-                                          "id": folder_id}],
-                             "mimeType": "text/csv" })
+    file = drive.CreateFile({
+        "title": title,
+        "parents": [{"kind": "drive#fileLink", "id": folder_id}],
+        "mimeType": "text/csv"
+    })
     
     # Set the content of the file to the CSV data.
     file.SetContentString(csv_file)

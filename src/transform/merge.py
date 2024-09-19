@@ -4,8 +4,6 @@ import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
 log = logging.getLogger(__name__)
 
-pd.set_option('future.no_silent_downcasting', True)
-
 ## ---- Functions ---- ##
 
 def fill_null_values(df, columns, value):
