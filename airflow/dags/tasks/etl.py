@@ -8,7 +8,7 @@ from transform.spotify_transform import transforming_spotify_data
 from transform.grammys_transform import transforming_grammys_data
 from transform.merge import merging_datasets
 
-from load_and_store.load import loading_clean_data
+from load_and_store.load import loading_merged_data
 from load_and_store.store import store_merged_data
 
 import json
@@ -76,7 +76,7 @@ def load_data(df):
         json_df = json.loads(df)
         
         df = pd.DataFrame(json_df)
-        loading_clean_data(df, "merged_data")
+        loading_merged_data(df, "merged_data")
         
         return df.to_json(orient="records")
     except Exception as e:
