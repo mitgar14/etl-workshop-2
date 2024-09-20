@@ -33,7 +33,46 @@ These dependencies are included in the `requirements.txt` file of the Python pro
 ## Dataset Information <img src="https://github.com/user-attachments/assets/5fa5298c-e359-4ef1-976d-b6132e8bda9a" alt="Dataset" width="30px"/>
 
 
-The datasets used (*spotify_dataset* and *the_grammy_awards*)...
+The datasets used (*spotify_dataset* and *the_grammy_awards*) are crucial for analyzing music trends, comparing track features, and understanding the relation between track characteristics and award recognition.
+
+Here’s an overview of the two datasets that were provided:
+
+### 1. **Spotify Dataset** (`spotify_dataset.csv`) <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Spotify.png/1200px-Spotify.png" alt="Spotify" width="22px"/>
+
+This dataset contains a wide variety of information about songs available on Spotify. Each row represents a single track with multiple attributes describing both the track's metadata and musical characteristics. The most important columns are:
+
+- **Unnamed: 0**: Acts as an index for the dataset.
+- **track_id**: A unique identifier for each track on Spotify.
+- **artists**: Name(s) of the artist(s) associated with the track.
+- **album_name**: The name of the album the track is from.
+- **track_name**: The title of the track.
+- **popularity**: A score between 0 and 100 indicating the popularity of the track on Spotify, where higher values mean more popularity.
+- **duration_ms**: The duration of the track in milliseconds.
+- **danceability**: A measure of how suitable a track is for dancing, where higher values indicate better danceability.
+- **energy**: A measure of intensity and activity in the track.
+- **key**: The musical key of the track (0 = C, 1 = C#, etc.).
+- **loudness**: The overall loudness of the track in decibels.
+- **mode**: Whether the track is in a major (1) or minor (0) mode.
+- **explicit**: Indicates if the track contains explicit content (True/False).
+- **tempo**: The speed of the track measured in beats per minute (BPM).
+- **valence**: A measure of the musical positiveness of the track.
+- **time_signature**: An estimated overall time signature of a track.
+- **track_genre**: The genre associated with the track.
+
+### 2. **Grammy Awards Dataset** (`the_grammy_awards.csv`) <img src="https://www.pngall.com/wp-content/uploads/9/Grammy-Awards-PNG-Download-Image.png" alt="Grammys" width="22px"/>
+
+This dataset contains information about Grammy Awards, with each row representing a nomination for a particular award. Key columns include:
+
+- **year**: The year the Grammy Awards took place.
+- **title**: The name of the Grammy event.
+- **published_at**: The date when the Grammy event details were published.
+- **category**: The category of the Grammy award (e.g., Record Of The Year, Best Pop Solo Performance).
+- **nominee**: The name of the nominated song or album.
+- **artist**: The artist(s) associated with the nominated song or album.
+- **workers**: Contributors (such as producers, engineers) involved in the nominated work.
+- **img**: URL linking to the image of the Grammy event or nominee.
+- **winner**: A boolean indicating whether the nominee won the award (True/False).
+
 
 ## Generate your Google Drive Auth file 🔑
 
