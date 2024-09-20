@@ -16,10 +16,7 @@ def loading_merged_data(df: pd.DataFrame, table_name: str) -> None:
     engine = creating_engine()
     
     try:
-        
-        df = load_clean_data(engine, df, table_name)
-        logging.info("Data loaded to the database.")
-        
+        df = load_clean_data(engine, df, table_name)    
     except Exception as e:
         logging.error(f"Error loading clean data to the database: {e}.")
     finally:
