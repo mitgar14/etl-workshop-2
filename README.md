@@ -87,8 +87,19 @@ Execute the following command to clone the repository:
 
 #### Demonstration of the process
 
-![Git Clone](https://github.com/user-attachments/assets/0885fcdd-d4d8-4774-98bc-ac34914d9a94)
+![git clone](https://github.com/user-attachments/assets/b1b6c169-1935-4683-832f-87d627163928)
 
+### Generate your Google Drive Auth file (`client_secrets.json`) 🔑
+
+* To learn how to generate a `client_secrets.json` file, [you can follow the following guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/drive_api.md). This guide explains step by step how to generate the authentication key to use the Google Drive API via PyDrive 2 in your *Store* script.
+
+* In case you receive an **error 400 - redirect_uri_mismatch**, [you can follow the next page](https://elcuaderno.notion.site/Solucionado-Acceso-bloqueado-La-solicitud-de-esta-app-no-es-v-lida-Google-Drive-API-106a9368866a8037b597ecdec3346405?pvs=4).
+
+### Configure PyDrive2 (`settings.yaml`) 📄
+
+To properly configure this project and ensure it works as expected, please follow the detailed instructions provided in the **PyDrive2 configuration guide**. This guide walks you through setting up the necessary variables, OAuth credentials, and project settings for Google Drive API integration using PyDrive2. 
+
+* You will configure your `settings.yaml` file for authentication and authorization. [You can find the step-by-step guide here](https://github.com/mitgar14/etl-workshop-2/blob/develop/docs/guides/drive_settings.md).
 
 ### Enviromental variables
 
@@ -137,34 +148,14 @@ For this project we use some environment variables that will be stored in one fi
 
 #### Demonstration of the process
 
-![Env Variables](https://github.com/user-attachments/assets/9e756e5e-db1a-4953-8d7c-1fa0a92d0500)
+![env variables](https://github.com/user-attachments/assets/1ace0df1-3313-4e59-b73b-8f5b280dbaed)
 
-### Generate your Google Drive Auth file (`client_secrets.json`) 🔑
+### Installing the dependencies with *pip*
 
-* To learn how to generate a `client_secrets.json` file, [you can follow the following guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/drive_api.md). This guide explains step by step how to generate the authentication key to use the Google Drive API via PyDrive 2 in your *Store* script.
-
-* In case you receive an **error 400 - redirect_uri_mismatch**, [you can follow the next page](https://elcuaderno.notion.site/Solucionado-Acceso-bloqueado-La-solicitud-de-esta-app-no-es-v-lida-Google-Drive-API-106a9368866a8037b597ecdec3346405?pvs=4).
-
-### Configure PyDrive2 (`settings.yaml`) 📄
-
-To properly configure this project and ensure it works as expected, please follow the detailed instructions provided in the **PyDrive2 configuration guide**. This guide walks you through setting up the necessary variables, OAuth credentials, and project settings for Google Drive API integration using PyDrive2. 
-
-* You will configure your `settings.yaml` file for authentication and authorization. [You can find the step-by-step guide here](https://github.com/mitgar14/etl-workshop-2/blob/develop/docs/guides/drive_settings.md).
-
-### Installing the dependencies with *Poetry*
-
-> To install Poetry follow [this link](https://elcuaderno.notion.site/Poetry-8f7b23a0f9f340318bbba4ef36023d60?pvs=4).
-
-
-1. Enter the Poetry shell with `poetry shell`.
-
-2. Once the virtual environment is created, execute `poetry install` to install the dependencies. In some case of error with the *.lock* file, just execute `poetry lock` to fix it.
-
-3. Now you can execute the notebooks!
+Once you enter the virtual environment, enter the project folder and execute `pip install -r requirements.txt` to install the dependencies. Now, you can execute both the notebooks and the Airflow pipeline.
 
 #### Demonstration of the process
 
-![Poetry](https://github.com/user-attachments/assets/3e683921-df9d-4e85-bb3f-c3761a8e3c73)
 
 
 ### Running the notebooks
