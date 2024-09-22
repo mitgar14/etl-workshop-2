@@ -8,7 +8,7 @@
 
 ## 💰 Claim Free Credits on GCP
 
-If you want to claim $300 free to use on Google Cloud Platform services, you can go to this [Notion page](https://www.notion.so/Instructivo-para-Reclamar-Cr-ditos-Gratis-en-Google-Cloud-103a9368866a80f98490e68b4a944c4d?pvs=21).
+If you want to claim $300 free to use on Google Cloud Platform services, you can go to this [Notion page](https://elcuaderno.notion.site/Instructions-to-Claim-Free-Credits-in-Google-Cloud-109a9368866a80d9a638fe914e385f22).
 
 ## 🛠️ Steps to Create a PostgreSQL Instance on GCP
 
