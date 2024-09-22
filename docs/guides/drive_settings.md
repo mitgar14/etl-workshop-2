@@ -8,7 +8,7 @@ Before proceeding, ensure that you have:
 
 - **Google Cloud credentials** with the necessary OAuth 2.0 credentials.
 - Access to your **client ID**, **client secret**, and **redirect URI** for Google Drive API access.
-- A valid path for saving **credentials** locally.
+- Remember that the folder where you save the `settings.yaml` file must be in a folder named **credentials** located in the project directory.
 
 ### Example `settings.yaml` File
 
@@ -99,8 +99,38 @@ oauth_scope:
 
 - **oauth_scope**: This defines the level of access your app will request. The scope `https://www.googleapis.com/auth/drive` gives full access to Google Drive.
 
+## Instructions for `client_secrets.json`
+
+You will also need a `client_secrets.json` file, which stores OAuth credentials provided by Google. The structure of this file is as follows:
+
+```json
+{
+    "web": {
+        "client_id": "your_client_id.apps.googleusercontent.com",
+        "project_id": "your_project_id",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "your_client_secret",
+        "redirect_uris": [
+            "http://localhost:8080/",
+            "http://localhost:8090/"
+        ]
+    }
+}
+```
+
+### Replace the following values with your own:
+
+- **client_id**: The unique identifier for your app provided by Google.
+- **project_id**: The Google Cloud project ID where your app is registered.
+- **client_secret**: The secret key associated with your Google API.
+- **redirect_uris** (*depends of the application use*): Redirect URIs used during the OAuth flow. Ensure that at least one is pointing to your local server (e.g., `http://localhost:8090/`). **This parameter changes depending on the type of use specified in the OAuth key configuration.**
+
+Place this file in the `credentials/` directory.
+
 ## Final Steps
 
-1. Save your `settings.yaml` file in the appropriate location within your project directory.
+1. Save both the `settings.yaml` and `client_secrets.json` files in the correct locations.
 2. Make sure that your OAuth credentials are properly set up in the Google Cloud Console.
 3. Once configured, run your pipeline with Airflow, and the `store.py` module will utilize this file to authenticate and interact with Google Drive.
