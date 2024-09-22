@@ -74,18 +74,6 @@ This dataset contains information about Grammy Awards, with each row representin
 - **winner**: A boolean indicating whether the nominee won the award (True/False).
 
 
-## Generate your Google Drive Auth file (`client_secrets.json`) 🔑
-
-To learn how to generate a `client_secrets.json` file, you can follow [the following guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/drive_api.md). This guide explains step by step how to generate the authentication key to use the Google Drive API via PyDrive 2 in your *Store* script.
-
-In case you receive an **error 400 - redirect_uri_mismatch**, you can follow the [next page](https://elcuaderno.notion.site/Solucionado-Acceso-bloqueado-La-solicitud-de-esta-app-no-es-v-lida-Google-Drive-API-106a9368866a8037b597ecdec3346405?pvs=4).
-
-## Configure PyDrive2 (`settings.yaml`) 📄
-
-To properly configure this project and ensure it works as expected, please follow the detailed instructions provided in the **PyDrive2 configuration guide**. This guide walks you through setting up the necessary variables, OAuth credentials, and project settings for Google Drive API integration using PyDrive2. 
-
-You will configure your `settings.yaml` file for authentication and authorization. You can find the step-by-step guide [here](https://github.com/mitgar14/etl-workshop-2/blob/develop/docs/guides/drive_settings.md).
-
 ## Run the project <img src="https://github.com/user-attachments/assets/99bffef1-2692-4cb8-ba13-d6c8c987c6dd" alt="Running code" width="30px"/>
 
 
@@ -151,6 +139,17 @@ For this project we use some environment variables that will be stored in one fi
 
 ![Env Variables](https://github.com/user-attachments/assets/9e756e5e-db1a-4953-8d7c-1fa0a92d0500)
 
+### Generate your Google Drive Auth file (`client_secrets.json`) 🔑
+
+* To learn how to generate a `client_secrets.json` file, [you can follow the following guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/drive_api.md). This guide explains step by step how to generate the authentication key to use the Google Drive API via PyDrive 2 in your *Store* script.
+
+* In case you receive an **error 400 - redirect_uri_mismatch**, [you can follow the next page](https://elcuaderno.notion.site/Solucionado-Acceso-bloqueado-La-solicitud-de-esta-app-no-es-v-lida-Google-Drive-API-106a9368866a8037b597ecdec3346405?pvs=4).
+
+### Configure PyDrive2 (`settings.yaml`) 📄
+
+To properly configure this project and ensure it works as expected, please follow the detailed instructions provided in the **PyDrive2 configuration guide**. This guide walks you through setting up the necessary variables, OAuth credentials, and project settings for Google Drive API integration using PyDrive2. 
+
+* You will configure your `settings.yaml` file for authentication and authorization. [You can find the step-by-step guide here](https://github.com/mitgar14/etl-workshop-2/blob/develop/docs/guides/drive_settings.md).
 
 ### Installing the dependencies with *Poetry*
 
