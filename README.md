@@ -80,6 +80,12 @@ To learn how to generate a `client_secrets.json` file, you can follow [the follo
 
 In case you receive an **error 400 - redirect_uri_mismatch**, you can follow the [next page](https://elcuaderno.notion.site/Solucionado-Acceso-bloqueado-La-solicitud-de-esta-app-no-es-v-lida-Google-Drive-API-106a9368866a8037b597ecdec3346405?pvs=4).
 
+## Configure PyDrive2 (`settings.yaml`) 📄
+
+To properly configure this project and ensure it works as expected, please follow the detailed instructions provided in the **PyDrive2 configuration guide**. This guide walks you through setting up the necessary variables, OAuth credentials, and project settings for Google Drive API integration using PyDrive2. 
+
+You will configure your `settings.yaml` file for authentication and authorization. You can find the step-by-step guide [here](https://github.com/mitgar14/etl-workshop-2/blob/develop/docs/guides/drive_settings.md).
+
 ## Run the project <img src="https://github.com/user-attachments/assets/99bffef1-2692-4cb8-ba13-d6c8c987c6dd" alt="Running code" width="30px"/>
 
 
