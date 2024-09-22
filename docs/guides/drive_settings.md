@@ -8,7 +8,7 @@ Before proceeding, ensure that you have:
 
 - **Google Cloud credentials** with the necessary OAuth 2.0 credentials.
 - Access to your **client ID**, **client secret**, and **redirect URI** for Google Drive API access.
-- Remember that the folder where you save the `settings.yaml` file must be in a folder named **credentials** located in the project directory.
+- Remember that the folder where you save the `settings.yaml` file must be in a folder named **env** located in the project directory.
 
 ### Example `settings.yaml` File
 
@@ -129,7 +129,7 @@ You will also need a `client_secrets.json` file, which stores OAuth credentials 
     
   > **This parameter changes depending on the type of use specified in the OAuth key configuration.**
 
-**Remember to place this file in the `credentials/` directory.**
+**Remember to place this file in the `env/` directory.**
 
 ## Final Steps
 
