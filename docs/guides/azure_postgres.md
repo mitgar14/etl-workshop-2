@@ -62,9 +62,11 @@ In the Azure Portal, go to **Create a resource** > **Databases** > **Azure Datab
 
 1. Once you’re on the ***Networking*** section, go to **Firewall Rules**.
 2. Add a new **Firewall Rule** to allow access to your database:
+   
     - **Name**: Assign a name to the rule.
     - **Start IP/End IP**: You can allow access from your current IP or enable access from all IPs (*be cautious if you allow access from all IPs*).
-3. Click **Review + Create** and then ***Create***.
+      
+4. Click **Review + Create** and then ***Create***.
 
 ![networking](https://github.com/user-attachments/assets/ef020cbc-d25a-4da6-bd1e-18046b2b1ec4)
 
@@ -75,12 +77,14 @@ In the Azure Portal, go to **Create a resource** > **Databases** > **Azure Datab
 You can connect to the PostgreSQL database using your favorite client (e.g., pgAdmin or psql).
 
 1. In your PostgreSQL client, provide the following connection details:
+   
     - **Host**: The server name (e.g., `your_server.postgres.database.azure.com`).
     - **Port**: 5432.
     - **Username**: The admin username (e.g., `postgres`).
     - **Password**: The password you set when creating the database.
     - **Database Name**: `postgres` (*default database or any other you create later*).
-2. Test the connection and start managing your PostgreSQL database.
+      
+3. Test the connection and start managing your PostgreSQL database.
 
 ![pgadmin](https://github.com/user-attachments/assets/15177cbd-aa52-4bb7-9ebd-a508a3f5177d)
 
