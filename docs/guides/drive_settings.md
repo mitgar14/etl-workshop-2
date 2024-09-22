@@ -1,4 +1,4 @@
-# Project Configuration Guide
+# Configuring the `settings.yaml` file 
 
 This guide will help you configure the `settings.yaml` file used by the `PyDrive2` library in conjunction with the `store.py` module. This setup is part of a data pipeline managed by Airflow. Follow the steps below to fill in the necessary configuration fields.
 
@@ -125,9 +125,11 @@ You will also need a `client_secrets.json` file, which stores OAuth credentials 
 - **client_id**: The unique identifier for your app provided by Google.
 - **project_id**: The Google Cloud project ID where your app is registered.
 - **client_secret**: The secret key associated with your Google API.
-- **redirect_uris** (*depends of the application use*): Redirect URIs used during the OAuth flow. Ensure that at least one is pointing to your local server (e.g., `http://localhost:8090/`). **This parameter changes depending on the type of use specified in the OAuth key configuration.**
+- **redirect_uris** (*depends of the application use*): Redirect URIs used during the OAuth flow. Ensure that at least one is pointing to your local server (e.g., `http://localhost:8090/`).
+    
+  > **This parameter changes depending on the type of use specified in the OAuth key configuration.**
 
-Place this file in the `credentials/` directory.
+**Remember to place this file in the `credentials/` directory.**
 
 ## Final Steps
 
