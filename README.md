@@ -226,7 +226,7 @@ export AIRFLOW_HOME="$(pwd)/airflow"
 Finally, you run Apache Airflow with the following command:
 
 ```bash
-airflow standalone"
+airflow standalone
 ```
 
 #### Demonstration of the process
