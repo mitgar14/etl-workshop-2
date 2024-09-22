@@ -213,6 +213,30 @@ To perform the Airflow tasks related to Data Extraction and Loading we recommend
 * [Microsoft Azure - Guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/azure_postgres.md)
 * [Google Cloud Platform (GCP) - Guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/gcp_postgres.md)
 
+---
+
+### 🚀 Running the Airflow pipeline
+
+To run Apache Airflow you must first export the `AIRFLOW_HOME` environment variable. This environment variable determines the project directory where we will be working with Airflow.
+
+```bash
+export AIRFLOW_HOME="$(pwd)/airflow"
+```
+
+Finally, you run Apache Airflow with the following command:
+
+```bash
+airflow standalone"
+```
+
+#### Demonstration of the process
+
+> [!IMPORTANT]
+> You need to enter the address [http://localhost:8080](http://localhost:8080/) in order to run the Airflow GUI and run the DAG corresponding to the project (*workshop2_dag*).
+
+![airflow](https://github.com/user-attachments/assets/2cea557b-391a-4385-818b-8c3822e00076)
+
+
 ## Thank you! 💕
 
 Thanks for visiting my project. Any suggestion or contribution is always welcome 🐍.
