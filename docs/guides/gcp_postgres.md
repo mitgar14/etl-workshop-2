@@ -16,44 +16,53 @@ If you want to claim $300 free to use on Google Cloud Platform services, you can
 
 - Log in to your Google Cloud account and select the project in which you want to create the PostgreSQL instance. You can also create a new project as follows:
 
-![drive-crear.gif](drive-crear.gif)
+  ![drive-crear](https://github.com/user-attachments/assets/53c27f72-e2d2-4a17-a265-350e7bb30c8c)
 
 - You can select which project to choose by clicking on the box at the top. Choose from the menu among all the projects you have.
-    
-    ![image.png](image.png)
-    
+
+  ![escoger-proyecto](https://github.com/user-attachments/assets/9e4b0c76-0832-427c-954c-b35781d5294d)
 
 ### 2. Access the Cloud SQL Console and Create a New Instance
 
 - In the GCP console, navigate to the side menu and select **SQL**.
     - 🔍 Or use the search bar and type "SQL" to go directly to the section.
+      
 - Click on the **Create Instance** ➕ button.
+  
 - Select **PostgreSQL** 🐘 as the database type.
+  
 - Important to enable the Compute Engine API: until you have it active, you cannot create an instance.
 
-![drive-sql.gif](drive-sql.gif)
+---
+
+![drive-sql](https://github.com/user-attachments/assets/ed1f26fe-2486-42da-9e33-4e34a7b57814)
 
 ### 3. Configure Instance Options
 
 - **💻 Cloud SQL Editions:**
     - Choose the *Enterprise* edition plan to reduce costs. Additionally, you can choose between the *Sandbox* and *Development* settings.
+      
 - **🔑 Authentication and Connection**:
     - Provide a unique name for your instance.
     - Provide a username and password for the database (the default user is `postgres`).
+      
 - **⚙️ Machine Configuration**:
     - Select the PostgreSQL version you wish to use.
     - Configure the 🌍 **region** and **zone** where you want the instance to be hosted (choose the closest to you or your users).
     - Define the machine type and specifications (CPU, memory, etc.) according to your needs.
+      
 - **💾 Storage**:
     - Define the disk size and whether you want it to expand automatically when necessary.
+      
 - **🌐 Connectivity**:
     - Add the IP `0.0.0.0/0` to the list of authorized networks in *Connections*.
+      
 - **📦 Backup**:
     - Enable automatic backups if desired (recommended).
 
 ---
 
-![drive-instancia.gif](drive-instancia.gif)
+![drive-instancia](https://github.com/user-attachments/assets/75601756-b9b8-43f9-8a7b-d31afa6e3f5e)
 
 ### 4. Review and Create
 
@@ -81,10 +90,8 @@ Once the instance is active, you can connect to it using:
     
     ---
     
-    ![pgadmin.gif](pgadmin.gif)
-    
+    ![pgadmin](https://github.com/user-attachments/assets/4ea141b0-3bdc-4b83-a142-71bbdd66e1e4)
 
----
 
 ## 🎉 Conclusion
 
