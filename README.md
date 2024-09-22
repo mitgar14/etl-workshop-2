@@ -77,7 +77,7 @@ This dataset contains information about Grammy Awards, with each row representin
 ## Run the project <img src="https://github.com/user-attachments/assets/99bffef1-2692-4cb8-ba13-d6c8c987c6dd" alt="Running code" width="30px"/>
 
 
-### Clone the repository
+### 🛠️ Clone the repository
 
 Execute the following command to clone the repository:
 
@@ -91,7 +91,7 @@ Execute the following command to clone the repository:
 
 ---
 
-### Generate your Google Drive Auth file (`client_secrets.json`)
+### 🔐 Generate your Google Drive Auth file (`client_secrets.json`)
 
 * To learn how to generate a `client_secrets.json` file, [you can follow the following guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/drive_api.md). This guide explains step by step how to generate the authentication key to use the Google Drive API via PyDrive 2 in your *Store* script.
 
@@ -99,7 +99,7 @@ Execute the following command to clone the repository:
 
 ---
 
-### Configure PyDrive2 (`settings.yaml`)
+### ⚙️ Configure PyDrive2 (`settings.yaml`)
 
 To properly configure this project and ensure it works as expected, please follow the detailed instructions provided in the **PyDrive2 configuration guide**. This guide walks you through setting up the necessary variables, OAuth credentials, and project settings for Google Drive API integration using PyDrive2. 
 
@@ -107,7 +107,7 @@ To properly configure this project and ensure it works as expected, please follo
 
 ---
 
-### Enviromental variables
+### 🌍 Enviromental variables
 
 > [!IMPORTANT]
 > Remember that you must use the absolute routes to the path.
@@ -158,7 +158,7 @@ For this project we use some environment variables that will be stored in one fi
 
 ---
 
-### Creating the virtual environment
+### 🐍 Creating the virtual environment
 
 To install the dependencies you need to first create a Python virtual environment. In order to create it run the following command:
 
@@ -178,7 +178,7 @@ source venv/bin/activate
 
 ---
 
-### Installing the dependencies with *pip*
+### 📦 Installing the dependencies with *pip* 
 
 Once you enter the virtual environment you can and execute `pip install -r requirements.txt` to install the dependencies. Now, you can execute both the notebooks and the Airflow pipeline.
 
@@ -188,7 +188,7 @@ Once you enter the virtual environment you can and execute `pip install -r requi
 
 ---
 
-### Running the notebooks
+### 📔 Running the notebooks
 
 Before executing the notebooks, it's necessary to **execute the *00-grammy_raw_load* notebook**; that notebook loads the Grammys Awards dataset into a PostgreSQL database.
 
@@ -206,13 +206,13 @@ Remember to choose **the right Python kernel** at the time of running the notebo
 
 ---
 
-### Deploy the Database at a Cloud Provider ☁
+### ☁ Deploy the Database at a Cloud Provider
 
 To perform the Airflow tasks related to Data Extraction and Loading we recommend **making use of a cloud database service**. Here are some guidelines for deploying your database in the cloud:
 
 * [Microsoft Azure - Guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/azure_postgres.md)
 * [Google Cloud Platform (GCP) - Guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/gcp_postgres.md)
 
-## Thank you! 💕🐍
+## Thank you! 💕
 
-Thanks for visiting my project. Any suggestion or contribution is always welcome 👄.
+Thanks for visiting my project. Any suggestion or contribution is always welcome 🐍.
