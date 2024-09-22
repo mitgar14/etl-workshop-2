@@ -13,7 +13,7 @@ The tools used are:
 * Python 3.10 ➜ [Download site](https://www.python.org/downloads/)
 * Jupyter Notebook ➜ [VS Code tool for using notebooks](https://youtu.be/ZYat1is07VI?si=BMHUgk7XrJQksTkt)
 * PostgreSQL ➜ [Download site](https://www.postgresql.org/download/)
-* Power BI (Desktop version) ➜ [Download site](https://www.microsoft.com/es-es/power-platform/products/power-bi/desktop)
+* Looker Studio ➜ [Website](https://lookerstudio.google.com/)
 
 > [!WARNING]
 > Apache Airflow only runs correctly in Linux environments. If you have Windows, we recommend using a virtual machine or WSL.
