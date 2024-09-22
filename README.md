@@ -74,9 +74,11 @@ This dataset contains information about Grammy Awards, with each row representin
 - **winner**: A boolean indicating whether the nominee won the award (True/False).
 
 
-## Generate your Google Drive Auth file 🔑
+## Generate your Google Drive Auth file (`client_secrets.json`) 🔑
 
-aaaa
+To learn how to generate a `client_secrets.json` file, you can follow [the following guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/drive_api.md). This guide explains step by step how to generate the authentication key to use the Google Drive API via PyDrive 2 in your *Store* script.
+
+In case you receive an **error 400 - redirect_uri_mismatch**, you can follow the [next page](https://elcuaderno.notion.site/Solucionado-Acceso-bloqueado-La-solicitud-de-esta-app-no-es-v-lida-Google-Drive-API-106a9368866a8037b597ecdec3346405?pvs=4).
 
 ## Run the project <img src="https://github.com/user-attachments/assets/99bffef1-2692-4cb8-ba13-d6c8c987c6dd" alt="Running code" width="30px"/>
 
@@ -96,15 +98,16 @@ Execute the following command to clone the repository:
 
 ### Enviromental variables
 
-> From now on, the steps will be done in VS Code.
+> [!IMPORTANT]
+> Remember that you must use the absolute routes to the path.
 
-To establish the connection to the database, we use a module called *connection.py*. In this Python script we call a file where our environment variables are stored, this is how we will create this file:
+For this project we use some environment variables that will be stored in one file named ***.env***, this is how we will create this file:
 
 1. We create a directory named ***env*** inside our cloned repository.
 
 2. There we create a file called ***.env***.
 
-3. In that file we declare 6 enviromental variables. Remember that the variables in this case go without double quotes, i.e. the string notation (`"`):
+3. In that file we declare 6 enviromental variables. Remember that some variables in this case go without double quotes, i.e. the string notation (`"`). Only the absolute routes go with these notation:
   ```python
   # PostgreSQL Variables
   
@@ -133,6 +136,9 @@ To establish the connection to the database, we use a module called *connection.
   
   # SAVED_CREDENTIALS_PATH: Path to the file where Google Drive saved credentials are stored.
   SAVED_CREDENTIALS_PATH = "/path/to/your/credentials/saved_credentials.json"
+
+  # FOLDER_ID: The ID of your Google Drive folder. You can get it from the link in your folder.
+  FOLDER_ID = # your-drive-folder-id
   ```
 
 #### Demonstration of the process
