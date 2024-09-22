@@ -89,17 +89,23 @@ Execute the following command to clone the repository:
 
 ![git clone](https://github.com/user-attachments/assets/b1b6c169-1935-4683-832f-87d627163928)
 
-### Generate your Google Drive Auth file (`client_secrets.json`) 🔑
+---
+
+### Generate your Google Drive Auth file (`client_secrets.json`)
 
 * To learn how to generate a `client_secrets.json` file, [you can follow the following guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/drive_api.md). This guide explains step by step how to generate the authentication key to use the Google Drive API via PyDrive 2 in your *Store* script.
 
 * In case you receive an **error 400 - redirect_uri_mismatch**, [you can follow the next page](https://elcuaderno.notion.site/Solucionado-Acceso-bloqueado-La-solicitud-de-esta-app-no-es-v-lida-Google-Drive-API-106a9368866a8037b597ecdec3346405?pvs=4).
 
-### Configure PyDrive2 (`settings.yaml`) 📄
+---
+
+### Configure PyDrive2 (`settings.yaml`)
 
 To properly configure this project and ensure it works as expected, please follow the detailed instructions provided in the **PyDrive2 configuration guide**. This guide walks you through setting up the necessary variables, OAuth credentials, and project settings for Google Drive API integration using PyDrive2. 
 
-* You will configure your `settings.yaml` file for authentication and authorization. [You can find the step-by-step guide here](https://github.com/mitgar14/etl-workshop-2/blob/develop/docs/guides/drive_settings.md).
+* You will configure your `settings.yaml` file for authentication and authorization. [You can find the step-by-step guide here](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/drive_settings.md).
+
+---
 
 ### Enviromental variables
 
@@ -150,26 +156,62 @@ For this project we use some environment variables that will be stored in one fi
 
 ![env variables](https://github.com/user-attachments/assets/1ace0df1-3313-4e59-b73b-8f5b280dbaed)
 
-### Installing the dependencies with *pip*
+---
 
-Once you enter the virtual environment, enter the project folder and execute `pip install -r requirements.txt` to install the dependencies. Now, you can execute both the notebooks and the Airflow pipeline.
+### Creating the virtual environment
+
+To install the dependencies you need to first create a Python virtual environment. In order to create it run the following command:
+
+```bash
+python 3 -m venv venv
+```
+
+Once created, run this other command to be able to run the environment. It is important that you are inside the project directory:
+
+```bash
+source venv/bin/activate
+```
 
 #### Demonstration of the process
 
+![activar entorno](https://github.com/user-attachments/assets/e9a8eab0-0e6a-4093-8992-aaa6f6abff6c)
 
+---
+
+### Installing the dependencies with *pip*
+
+Once you enter the virtual environment you can and execute `pip install -r requirements.txt` to install the dependencies. Now, you can execute both the notebooks and the Airflow pipeline.
+
+#### Demonstration of the process
+
+![pip install](https://github.com/user-attachments/assets/99ab96f9-4782-46b5-80ec-d5653bb0103d)
+
+---
 
 ### Running the notebooks
 
-We execute the 3 notebooks following the next order. You can run it just pressing the "Execute All" button:
+Before executing the notebooks, it's necessary to **execute the *00-grammy_raw_load* notebook**; that notebook loads the Grammys Awards dataset into a PostgreSQL database.
 
-   1. *001_rawDataLoad.ipynb*
-   2. *002_candidatesEDA.ipynb*
-   3. *003_cleanDataLoad.ipynb*
+After you have run that notebook, then run the others in the following order. Remember that you can run all the cells in the notebook using the “Run All” button:
 
-![image](https://github.com/user-attachments/assets/7599de5a-3330-4d1d-ac08-ced17639c320)
+   1. *01-EDA_Spotify.ipynb*
+   2. *02-EDA_Grammys.ipynb*
+   3. *03-data_pipeline.ipynb*
+
+![Ejecutar todo](https://github.com/user-attachments/assets/23855432-fe8f-49ca-9cac-6175b5ba84de)
   
-Remember to choose **the right Python kernel** at the time of running the notebook and **install the *ipykernel*** to support Jupyter notebooks in VS Code.
+Remember to choose **the right Python kernel** at the time of running the notebook.
 
+![Python kernel](https://github.com/user-attachments/assets/b22bc16d-028a-4b0d-8565-7dde8434d7bf)
+
+---
+
+### Deploy the Database at a Cloud Provider ☁
+
+To perform the Airflow tasks related to Data Extraction and Loading we recommend **making use of a cloud database service**. Here are some guidelines for deploying your database in the cloud:
+
+* [Microsoft Azure - Guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/azure_postgres.md)
+* [Google Cloud Platform (GCP) - Guide](https://github.com/mitgar14/etl-workshop-2/blob/main/docs/guides/gcp_postgres.md)
 
 ## Thank you! 💕🐍
 
