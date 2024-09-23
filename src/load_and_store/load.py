@@ -5,6 +5,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
 
+# Loading the merged data to the database
 def loading_merged_data(df: pd.DataFrame, table_name: str) -> None:
     """
     Load the clean data to a database.   
