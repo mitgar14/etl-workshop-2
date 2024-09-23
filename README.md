@@ -73,6 +73,10 @@ This dataset contains information about Grammy Awards, with each row representin
 - **img**: URL linking to the image of the Grammy event or nominee.
 - **winner**: A boolean indicating whether the nominee won the award (True/False).
 
+## Data flow <img src="https://cdn-icons-png.flaticon.com/512/1953/1953319.png" alt="Data flow" width="22px"/>
+
+![Flujo de datos](https://github.com/user-attachments/assets/8720e7d9-4e83-4752-a05e-41f40e04efa6)
+
 
 ## Run the project <img src="https://github.com/user-attachments/assets/99bffef1-2692-4cb8-ba13-d6c8c987c6dd" alt="Running code" width="30px"/>
 
