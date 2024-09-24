@@ -18,4 +18,4 @@ def extracting_spotify_data(path):
         logging.info(f"Data extracted from {path}.")
         return df
     except Exception as e:
-        logging.error(f"Error extracting data from {path}: {e}.")
+        logging.error(f"Error extracting data: {e}.")
