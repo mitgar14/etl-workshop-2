@@ -20,9 +20,6 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
-load_dotenv("./env/.env")
-folder_id = os.getenv("FOLDER_ID")
-
 # Creating tasks functions
 # ------------------------
 
@@ -92,6 +89,6 @@ def store_data(df):
         json_df = json.loads(df)
         
         df = pd.DataFrame(json_df)
-        storing_merged_data("merged_data", df, f"{folder_id}")
+        storing_merged_data("merged_data", df)
     except Exception as e:
         logging.error(f"Error storing data: {e}")
