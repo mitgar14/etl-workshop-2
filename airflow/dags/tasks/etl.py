@@ -1,8 +1,6 @@
 # Importing the necessary modules
 # --------------------------------
 
-from dotenv import load_dotenv
-
 from extract.spotify_extract import extracting_spotify_data
 from extract.grammys_extract import extracting_grammys_data
 
