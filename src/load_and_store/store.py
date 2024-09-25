@@ -15,6 +15,7 @@ load_dotenv("./env/.env")
 client_secrets_file = rf"{os.getenv('CLIENT_SECRETS_PATH')}"
 settings_file = rf"{os.getenv('SETTINGS_PATH')}"
 credentials_file = rf"{os.getenv('CREDENTIALS_FILE_PATH')}"
+folder_id = os.getenv("FOLDER_ID")
 
 # Function to authenticate Google Drive using PyDrive2.
 def auth_drive():
@@ -62,7 +63,7 @@ def auth_drive():
         logging.error(f"Authentication error: {e}", exc_info=True)
 
 # Function to upload a merged DataFrame to Google Drive as a CSV file.
-def storing_merged_data(title, df, folder_id):
+def storing_merged_data(title, df):
     """
     Stores a given DataFrame as a CSV file on Google Drive.
     

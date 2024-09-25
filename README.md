@@ -13,7 +13,7 @@ The tools used are:
 * Python 3.10 ➜ [Download site](https://www.python.org/downloads/)
 * Jupyter Notebook ➜ [VS Code tool for using notebooks](https://youtu.be/ZYat1is07VI?si=BMHUgk7XrJQksTkt)
 * PostgreSQL ➜ [Download site](https://www.postgresql.org/download/)
-* Looker Studio ➜ [Website](https://lookerstudio.google.com/)
+* Power BI (Desktop version) ➜ [Download site](https://www.microsoft.com/es-es/power-platform/products/power-bi/desktop)
 
 > [!WARNING]
 > Apache Airflow only runs correctly in Linux environments. If you have Windows, we recommend using a virtual machine or WSL.
@@ -75,8 +75,7 @@ This dataset contains information about Grammy Awards, with each row representin
 
 ## Data flow <img src="https://cdn-icons-png.flaticon.com/512/1953/1953319.png" alt="Data flow" width="22px"/>
 
-![Flujo de datos](https://github.com/user-attachments/assets/8720e7d9-4e83-4752-a05e-41f40e04efa6)
-
+![Flujo de datos](https://github.com/user-attachments/assets/6e9d34c0-8611-4f1a-b283-87029d2621da)
 
 ## Run the project <img src="https://github.com/user-attachments/assets/99bffef1-2692-4cb8-ba13-d6c8c987c6dd" alt="Running code" width="30px"/>
 
