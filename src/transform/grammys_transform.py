@@ -9,6 +9,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefm
 def extract_artist(workers):
     """
     Extracts the artist name from the 'workers' column if it's within parentheses.
+    
     """
     if pd.isna(workers):
         return None
@@ -20,6 +21,7 @@ def extract_artist(workers):
 def move_workers_to_artist(row):
     """
     Moves the value from 'workers' to 'artist' if 'artist' is NaN and 'workers' doesn't contain ';' or ','.
+    
     """
     if pd.isna(row["artist"]) and pd.notna(row["workers"]):
         workers = row["workers"]
@@ -30,6 +32,7 @@ def move_workers_to_artist(row):
 def extract_artists_before_semicolon(workers, roles):
     """
     Extracts the first segment of 'workers' before the semicolon if it doesn't contain roles of interest.
+    
     """
     if pd.isna(workers):
         return None
@@ -42,6 +45,7 @@ def extract_artists_before_semicolon(workers, roles):
 def extract_roles_based_on_interest(workers, roles):
     """
     Extracts names associated with specific roles from 'workers' and assigns them to 'artist'.
+    
     """
     if pd.isna(workers):
         return None
@@ -84,6 +88,7 @@ roles_of_interest = [
 def transforming_grammys_data(df):
     """
     Cleans and transforms the Grammy Awards data and returns the DataFrame.
+    
     """
     try:
         logging.info(f"Starting transformation. The DataFrame has {df.shape[0]} rows and {df.shape[1]} columns.")

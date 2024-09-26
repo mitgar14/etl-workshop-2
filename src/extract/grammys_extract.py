@@ -5,6 +5,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
 
+## ----- Grammys Extract ----- ##
+
 def extracting_grammys_data():
     """
     Extracting data from the Spotify CSV file and return it as a DataFrame.   

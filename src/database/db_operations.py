@@ -86,10 +86,12 @@ def load_clean_data(engine, df, table_name):
             
             table = Table(table_name, metadata, *columns)
             table.create(engine)
-
-            df.to_sql(table_name, con=engine, if_exists="append", index=False)
             
             logging.info(f"Table {table_name} created successfully.")
+
+            df.to_sql(table_name, con=engine, if_exists="append", index=False)
+
+            logging.info(f"Data loaded to table {table_name}.")
         else:
             logging.error(f"Table {table_name} already exists.")
     except Exception as e:

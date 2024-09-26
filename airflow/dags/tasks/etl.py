@@ -8,15 +8,15 @@ from transform.spotify_transform import transforming_spotify_data
 from transform.grammys_transform import transforming_grammys_data
 from transform.merge import merging_datasets
 
-from load_and_store.load import loading_clean_data
-from load_and_store.store import store_merged_data
+from load_and_store.load import loading_merged_data
+from load_and_store.store import storing_merged_data
 
+import os
 import json
 import pandas as pd
 import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-
 
 # Creating tasks functions
 # ------------------------
@@ -76,7 +76,7 @@ def load_data(df):
         json_df = json.loads(df)
         
         df = pd.DataFrame(json_df)
-        loading_clean_data(df, "merged_data")
+        loading_merged_data(df, "merged_data")
         
         return df.to_json(orient="records")
     except Exception as e:
@@ -87,6 +87,6 @@ def store_data(df):
         json_df = json.loads(df)
         
         df = pd.DataFrame(json_df)
-        store_merged_data("merged_data", df, "1x3tS43kSxC2oKhq7xCiJFzXqGerGvcy7")
+        storing_merged_data("merged_data", df)
     except Exception as e:
         logging.error(f"Error storing data: {e}")
