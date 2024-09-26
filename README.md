@@ -226,11 +226,15 @@ To run Apache Airflow you must first export the `AIRFLOW_HOME` environment varia
 export AIRFLOW_HOME="$(pwd)/airflow"
 ```
 
-Finally, you run Apache Airflow with the following command:
+Finally, you can run Apache Airflow with the following command:
 
 ```bash
 airflow standalone
 ```
+
+Allow Apache Airflow to read the modules contained in `src` by giving the absolute path to that directory in the configuration variable `plugins_folder` at the `airflow.cfg` file:
+
+![plugins_path](https://github.com/user-attachments/assets/4b8cd7e0-1648-4c87-bc5d-596e1ac8ec43)
 
 #### Demonstration of the process
 
