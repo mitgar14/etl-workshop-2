@@ -121,7 +121,7 @@ For this project we use some environment variables that will be stored in one fi
 
 2. There we create a file called ***.env***.
 
-3. In that file we declare 6 enviromental variables. Remember that some variables in this case go without double quotes, i.e. the string notation (`"`). Only the absolute routes go with these notation:
+3. In that file we declare 9 enviromental variables. Remember that some variables in this case go without double quotes, i.e. the string notation (`"`). Only the absolute routes go with these notation:
   ```python
   # PostgreSQL Variables
   
