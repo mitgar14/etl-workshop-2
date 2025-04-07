@@ -37,12 +37,6 @@ def auth_drive():
     
     
     try:
-        
-        logging.info("Loading environment variables.")
-        logging.info(f"Client secrets file: {client_secrets_file}")
-        logging.info(f"Settings file: {settings_file}")
-        logging.info(f"Credentials file: {credentials_file}")
-        logging.info(f"Folder ID: {folder_id}")
       
         logging.info("Starting Google Drive authentication process.")
 
