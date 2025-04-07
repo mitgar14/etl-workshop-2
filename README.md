@@ -121,7 +121,7 @@ For this project we use some environment variables that will be stored in one fi
 
 2. There we create a file called ***.env***.
 
-3. In that file we declare 6 enviromental variables. Remember that some variables in this case go without double quotes, i.e. the string notation (`"`). Only the absolute routes go with these notation:
+3. In that file we declare 9 enviromental variables. Remember that some variables in this case go without double quotes, i.e. the string notation (`"`). Only the absolute routes go with these notation:
   ```python
   # PostgreSQL Variables
   
@@ -226,15 +226,11 @@ To run Apache Airflow you must first export the `AIRFLOW_HOME` environment varia
 export AIRFLOW_HOME="$(pwd)/airflow"
 ```
 
-Finally, you can run Apache Airflow with the following command:
+Finally, you run Apache Airflow with the following command:
 
 ```bash
 airflow standalone
 ```
-
-Allow Apache Airflow to read the modules contained in `src` by giving the absolute path to that directory in the configuration variable `plugins_folder` at the `airflow.cfg` file:
-
-![plugins_path](https://github.com/user-attachments/assets/4b8cd7e0-1648-4c87-bc5d-596e1ac8ec43)
 
 #### Demonstration of the process
 

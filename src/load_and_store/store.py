@@ -2,6 +2,7 @@ from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
 
 from dotenv import load_dotenv
+from pathlib import Path
 import os
 
 import pandas as pd
@@ -9,12 +10,14 @@ import pandas as pd
 import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
 
-# Load environment variable
-load_dotenv("./env/.env")
+env_path = Path(__file__).parent.resolve() / ".env"
+load_dotenv(dotenv_path=env_path)
 
-client_secrets_file = rf"{os.getenv('CLIENT_SECRETS_PATH')}"
-settings_file = rf"{os.getenv('SETTINGS_PATH')}"
-credentials_file = rf"{os.getenv('CREDENTIALS_FILE_PATH')}"
+config_dir = Path(os.getenv("CONFIG_DIR")).resolve()
+
+client_secrets_file = config_dir / "client_secrets.json"
+settings_file = config_dir / "settings.yaml"
+credentials_file = config_dir / "saved_credentials.json"
 folder_id = os.getenv("FOLDER_ID")
 
 # Function to authenticate Google Drive using PyDrive2.
@@ -34,6 +37,7 @@ def auth_drive():
     
     
     try:
+      
         logging.info("Starting Google Drive authentication process.")
 
         gauth = GoogleAuth(settings_file=settings_file)
