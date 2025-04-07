@@ -18,6 +18,8 @@ poetry.lock
 
 # Airflow
 airflow*.*
+config/
+plugins/
 logs/
 standalone_admin_password.txt
 webserver_config.py
