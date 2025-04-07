@@ -10,7 +10,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%d/%m/%Y %I:%M:%S %p")
 
 # Load environment variable
-load_dotenv("./env/.env")
+load_dotenv()
 
 client_secrets_file = rf"{os.getenv('CLIENT_SECRETS_PATH')}"
 settings_file = rf"{os.getenv('SETTINGS_PATH')}"
